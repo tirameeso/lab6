@@ -11,6 +11,24 @@ def password_encoder_dict(password):
     return encoded[password]
 
 
+def decoder(password):
+    new_string_decoded = ''
+    for digit in password:
+        if int(digit) > 3:
+            new_number = int(digit) - 3
+            new_string_decoded += str(new_number)
+        elif digit == '0':
+            digit = '7'
+            new_string_decoded += digit
+        elif digit == '1':
+            digit = '8'
+            new_string_decoded += digit
+        elif digit == '2':
+            digit = '9'
+            new_string_decoded += digit
+    return new_string_decoded
+
+
 if __name__ == "__main__":
     encoded_user_pass = ''
     while True:
@@ -23,7 +41,8 @@ if __name__ == "__main__":
             print('Your password has been encoded and stored!\n')
 
         elif option == 2:
-            pass
+            decoded_password = decoder(encoded_user_pass)
+            print(f"The encoded password is {encoded_user_pass}, and the original password is {decoded_password}.\n")
 
         elif option == 3:
             break
