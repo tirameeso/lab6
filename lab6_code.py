@@ -1,4 +1,4 @@
-# Angely Gomez
+# Angely Gomez, 3/22/23
 def password_encoder(password):
     encoded_pass = ""
     for number in password:
